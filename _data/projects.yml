@@ -1,16 +1,10 @@
 # Projects
-# uncomment the urls if you wish to display them, and add your own URL
+- project: Competitive Programming
+  role: Algorithms and Problem Solving
+  duration: 2022 &mdash; Present
+  description: Built strong algorithmic problem-solving experience through ICPC Asia Seoul Regional, National High School Girls' Programming Contest, NYPC, and KOI competitions.
 
-# jazznotes.io
-- project: jazznotes.io
-  role: Founder & Primary Developer
-  duration: 2012 &mdash; Present
-  # url: "#"
-  description: Jazz Notes is an open source node/ember app that helps you keep track of your music compositions and new ideas.
-
-# Springfield Community Outreach Group
-- project: Springfield Community Outreach Group
-  role: Co-Founder & Organizer
-  duration: 2007 &mdash; Present
-  # url: "#"
-  description: SCOG is a local monthly meetup in Springfield where we share opportunities to volunteer in the community and organize support for families and neighborhoods in need of assistance that the community can provide.
+- project: Academic Research and Presentations
+  role: Computer Science Research
+  duration: 2023 &mdash; 2025
+  description: Presented and received awards for research-oriented work, including the Outstanding Graduation Thesis Award in Computer Science at GSHS and excellence paper awards at KIICE conferences.

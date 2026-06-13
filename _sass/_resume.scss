@@ -6,12 +6,13 @@
 .section-header {
   @include section_border;
   margin-bottom: 1.5rem;
+  scroll-margin-top: 1rem;
 
   h2 {
     @include sans;
     font-weight: 900;
     font-size: 1.75rem;
-    letter-spacing: -.05rem;
+    letter-spacing: 0;
     margin: 0;
   }
 }
@@ -21,12 +22,14 @@
 .page-header { padding: 1.5rem 0;
 
   .avatar {
-    width: 95px;
+    width: 128px;
+    height: 128px;
     max-width: 100%;
     overflow: hidden;
     @include border-radius(100px);
     margin: 0 auto;
     display: block;
+    object-fit: cover;
   }
 
   .header-name {
@@ -34,7 +37,7 @@
     font-size: 3rem;
     font-weight: 900;
     text-align: center;
-    letter-spacing: -.15rem;
+    letter-spacing: 0;
     line-height: 1;
     margin: 1rem 0 0;
   }
@@ -58,7 +61,7 @@
       font-weight: 300;
       font-size: 1.75rem;
       line-height: 2rem;
-      letter-spacing: -.05rem;
+      letter-spacing: 0;
       text-align: center;
       margin: 0 0 .5rem;
 
@@ -71,6 +74,33 @@
 
   .executive-summary {
     @include media_larger_than_mobile { font-size: 1.125rem; }
+  }
+}
+
+.site-nav {
+  @include sans;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .5rem .75rem;
+  margin: 1.5rem 0 0;
+
+  a {
+    color: #333;
+    font-weight: 700;
+    text-decoration: none;
+    border-bottom: 2px solid #c7c7c7;
+    padding: .2rem .1rem;
+
+    &:hover,
+    &:focus {
+      border-color: #333;
+    }
+
+    &:focus {
+      outline: 3px solid #767676;
+      outline-offset: 3px;
+    }
   }
 }
 
@@ -127,6 +157,11 @@
     color: #fff;
   }
 
+  &:focus {
+    outline: 3px solid #767676;
+    outline-offset: 3px;
+  }
+
   &.not-looking { width: 400px; }
 }
 
@@ -134,6 +169,7 @@
 
 .content-section {
   margin: 0 0 3rem;
+  scroll-margin-top: 1rem;
 
   .resume-item { margin-bottom: 2rem; }
 
@@ -141,7 +177,7 @@
     @include sans_bold;
     margin: 0 0 .75rem;
     font-size: 1.5rem;
-    letter-spacing: -.05rem;
+    letter-spacing: 0;
     line-height: 1;
   }
 
@@ -172,6 +208,44 @@
   }
 
   .resume-item-copy { margin: .75rem 0 0; }
+
+  .contact-list {
+    padding-left: 1.25rem;
+  }
+
+  .resume-download {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 520px) {
+  .page-header {
+    .header-name {
+      font-size: 2.35rem;
+    }
+
+    .title-bar .header-title {
+      font-size: 1.35rem;
+      line-height: 1.6rem;
+    }
+  }
+
+  .contact-button {
+    width: 100%;
+    max-width: 220px;
+  }
+
+  .content-section {
+    .resume-item-title {
+      font-size: 1.3rem;
+      line-height: 1.15;
+    }
+
+    .resume-item-details {
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+  }
 }
 
 // footer styles

@@ -13,7 +13,7 @@
 
         <!-- You can turn off the avatar in _config.yml by setting to false -->
         {% if site.resume_avatar == 'true' %}
-        <img src="images/avatar.jpg" alt="my photo" class="avatar no-print" itemprop="image">
+        <img src="images/profile.png" alt="Portrait of Minyu Kim" class="avatar no-print" itemprop="image">
         {% endif %}
 
         <!-- Your name is defined in the _config.yml file -->
@@ -39,8 +39,19 @@
           {{ site.resume_header_intro }}
         </div>
 
+        <nav class="site-nav no-print" aria-label="Main navigation">
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a href="#resume">CV</a>
+          <a href="#activities">Activities</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#honors">Honors</a>
+          <a href="#courses">Courses</a>
+        </nav>
+
         {% if site.resume_looking_for_work == 'yes' %}
-        <a href="mailto:{{ site.resume_contact_email }}" class="contact-button no-print" itemprop="email">Contact me</a>
+        <a href="mailto:{{ site.resume_contact_email }}" class="contact-button no-print" itemprop="email">Email me</a>
         {% elsif site.resume_looking_for_work == 'no' %}
         <a class="contact-button not-looking no-print">I'm not looking for work right now.</a>
         {% else %}
@@ -48,12 +59,37 @@
 
       </header>
 
+      <main>
+
+      <section class="content-section" id="about" aria-labelledby="about-heading">
+        <header class="section-header">
+          <h2 id="about-heading">Personal Information</h2>
+        </header>
+        <div class="resume-item">
+          <h3 class="resume-item-title">{{ site.resume_name }}</h3>
+          <h4 class="resume-item-details">{{ site.resume_title }} &bull; Bachelor of Science in Computer Science, Seoul National University</h4>
+          <p class="resume-item-copy">I study computer science with interests in algorithms, computer systems, data mining, and data-driven problem solving.</p>
+        </div>
+      </section>
+
+      <section class="content-section" id="contact" aria-labelledby="contact-heading">
+        <header class="section-header">
+          <h2 id="contact-heading">Contact</h2>
+        </header>
+        <div class="resume-item">
+          <ul class="resume-item-list contact-list">
+            <li>Email: <a href="mailto:{{ site.resume_contact_email }}" itemprop="email">{{ site.resume_contact_email }}</a></li>
+            <li>GitHub: <a href="{{ site.resume_social_links.resume_github_url }}" itemprop="url">github.com/minyukim6</a></li>
+          </ul>
+        </div>
+      </section>
+
       {% if site.resume_section_experience %}
       <!-- begin Experience -->
-      <section class="content-section">
+      <section class="content-section" id="activities" aria-labelledby="activities-heading">
 
         <header class="section-header">
-          <h2>Experience</h2>
+          <h2 id="activities-heading">Activities</h2>
         </header>
 
         {% for job in site.data.experience %}
@@ -71,24 +107,25 @@
 
       {% if site.resume_section_education %}
       <!-- begin Education -->
-      <section class="content-section">
+      <section class="content-section" id="resume" aria-labelledby="resume-heading">
         <header class="section-header">
-          <h2>Education</h2>
+          <h2 id="resume-heading">CV / Resume</h2>
         </header>
+        <p class="resume-item-copy resume-download">
+          <a href="_assets/cv.pdf">View full CV as PDF</a>
+        </p>
 
         {% for education in site.data.education %}
         <div class="resume-item" itemscope itemprop="alumniOf" itemtype="http://schema.org/CollegeOrUniversity">
           <h3 class="resume-item-title" itemprop="name">{{ education.uni }}</h3>
           <h4 class="resume-item-details group" itemprop="description">{{ education.degree }} &bull; {{ education.year }}</h4>
-          <h5 class="resume-item-details award-title" itemprop="description">{{ education.award }}</h5>
-          <p class="resume-item-copy" itemprop="description">
-            <ul class="resume-item-list">
-              {% for award in education.awards %}
-              <li>{{ award.award }}</li>
-              {% endfor %}
-            </ul>
-
-
+          {% if education.awards %}
+          <ul class="resume-item-list" itemprop="description">
+            {% for award in education.awards %}
+            <li>{{ award.award }}</li>
+            {% endfor %}
+          </ul>
+          {% endif %}
           <p class="resume-item-copy">{{ education.summary }}</p>
         </div>
         {% endfor %}
@@ -99,9 +136,9 @@
 
       {% if site.resume_section_projects %}
       <!-- begin Projects -->
-      <section class="content-section">
+      <section class="content-section" id="projects" aria-labelledby="projects-heading">
         <header class="section-header">
-          <h2>Projects</h2>
+          <h2 id="projects-heading">Projects</h2>
         </header>
 
         {% for project in site.data.projects %}
@@ -119,10 +156,10 @@
 
       {% if site.resume_section_skills %}
       <!-- begin Skills -->
-      <section class="content-section">
+      <section class="content-section" id="skills" aria-labelledby="skills-heading">
 
         <header class="section-header">
-          <h2>Skills</h2>
+          <h2 id="skills-heading">Skills</h2>
         </header>
         {% for skill in site.data.skills %}
         <div class="resume-item">
@@ -137,10 +174,10 @@
 
       {% if site.resume_section_recognition %}
       <!-- begin Recognition -->
-      <section class="content-section">
+      <section class="content-section" id="honors" aria-labelledby="honors-heading">
 
         <header class="section-header">
-          <h2>Recognition</h2>
+          <h2 id="honors-heading">Honors and Awards</h2>
         </header>
 
         {% for recognition in site.data.recognitions %}
@@ -154,6 +191,21 @@
       </section>
       <!-- end Recognition -->
       {% endif %}
+
+      <section class="content-section" id="courses" aria-labelledby="courses-heading">
+        <header class="section-header">
+          <h2 id="courses-heading">Planned Courses</h2>
+        </header>
+        <div class="resume-item">
+          <ul class="resume-item-list">
+            <li>Computer Systems</li>
+            <li>Data Mining</li>
+            <li>Operating Systems</li>
+            <li>Database Systems</li>
+            <li>Machine Learning</li>
+          </ul>
+        </div>
+      </section>
 
       {% if site.resume_section_associations %}
       <!-- begin Associations -->
@@ -231,9 +283,10 @@
       <!-- end Print Social Links -->
       {% endif %}
 
+      </main>
+
       <footer class="page-footer">
-        <p class="footer-line">Made by <a href="http://twitter.com/jglovier">@jglovier</a>. Fork me on <a href="https://github.com/jglovier/resume-template">GitHub</a>.</p>
-        <p class="footer-line">If this is your live resume, you can modify or remove this part. ;-)</p>
+        <p class="footer-line">&copy; {{ site.time | date: '%Y' }} Minyu Kim.</p>
       </footer>
 
     </div>

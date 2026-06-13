@@ -1,13 +1,16 @@
-# Degree
-- degree: Bachelor of Arts, Human Rights
-  uni: Yale University
-  year: 2004 &mdash; 2008
+# Education
+- degree: Bachelor of Science (B.S.) in Computer Science
+  uni: Seoul National University
+  year: 2025 &mdash; Current
   awards:
-    - award: Summa Cumme Laude graduate
-  summary: If you had any meaningful roles at college, feel free to write about them here
+    - award: "GPA: 4.50 / 4.50"
+    - award: "Relevant coursework: Discrete Mathematics, Statistics, Linear Algebra"
+  summary: Full Tuition Scholarship recipient in 2026.
 
-- degree: High School Diploma
-  uni: Springfield High School
-  year: 2004
-  award: Most likely to succeed
-  summary: You can choose to have either a single or multiple awards
+- degree: Concentration in Computer Science and Mathematics
+  uni: Gyeonggi Science High School
+  year: 2022 &mdash; 2024
+  awards:
+    - award: "GPA: 4.24 / 4.30"
+    - award: "Ranked #1 in Mathematics"
+  summary: Received selected academic excellence awards in Informatics, Object-Oriented Programming, General Physics, Calculus, Applied Mathematics, and Information Science Seminar.
